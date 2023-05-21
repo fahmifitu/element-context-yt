@@ -1,0 +1,79 @@
+{
+  "panels": {
+    "element_context_yt": {
+      "title": "Element Context",
+      "fields": {
+        "element_context_yt.context": {
+          "label": "Context",
+          "type": "select",
+          "default": "all",
+          "options": {
+            "Show everywhere": "all",
+            "Show on matched": "show_selected",
+            "Hide everywhere": "none",
+            "Hide on selected": "hide_selected"
+          }
+        },
+        "element_context_yt.match_language": {
+          "label": "Match By Language",
+          "type": "text",
+          "description": "Comma delimited locales. eg: ar,en_US",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'",
+          "attrs": {
+            "placeholder": "Leave empty to match all languages"
+          }
+        },
+        "element_context_yt.match_location": {
+          "label": "Match By Section",
+          "type": "select",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'",
+          "options": {
+            "Front page": "is_front_page",
+            "Blog page": "is_home",
+            "All posts, pages and custom post types": "is_singular",
+            "All posts": "is_single",
+            "All pages": "is_page",
+            "All attachments": "is_attachment",
+            "Search results": "is_search",
+            "404 error page": "is_404",
+            "All archives": "is_archive",
+            "All date archives": "is_date",
+            "Daily archives": "is_day",
+            "Monthly archives": "is_month",
+            "Yearly archives": "is_year",
+            "All category archives": "is_category",
+            "All tag archives": "is_tag",
+            "All author archives": "is_author"
+          },
+          "attrs": {
+            "multiple": true
+          }
+        },
+        "element_context_yt.match_archive_postype": {
+          "label": "Match By Archive Post Type",
+          "type": "text",
+          "description": "Comma delimited post slugs. eg: post,event",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'"
+        },
+        "element_context_yt.match_single_postype": {
+          "label": "Match By Single Post Type",
+          "type": "text",
+          "description": "Comma delimited post slugs. eg: post,event",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'"
+        },
+        "element_context_yt.match_archive_taxonomy": {
+          "label": "Match By Archive Taxonomy",
+          "type": "text",
+          "description": "Comma delimited taxonomy slugs. eg: category,post_tag,event_category",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'"
+        },
+        "element_context_yt.match_url": {
+          "label": "Match By URL",
+          "type": "text",
+          "description": "Comma delimited urls. eg: /posts, /custom-url/*",
+          "enable": "element_context_yt.context != 'all' && element_context_yt.context != 'none'"
+        }
+      }
+    }
+  }
+}
